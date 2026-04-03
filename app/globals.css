@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050508;
+  --foreground: #e0e0e0;
+  --neon-cyan: #00fff0;
+  --neon-pink: #ff00c8;
+  --neon-violet: #bf5af2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-orbitron);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ── Scanlines overlay ─────────────────────────────────────────────────────── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.04) 2px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── Glitch text ───────────────────────────────────────────────────────────── */
+/*
+  Creates the classic RGB-split glitch — text-shadow offsets
+  in cyan and pink, paired with a tiny translate jitter.
+  Use .glitch on any heading. Idle: subtle + slow. Hover: rapid.
+*/
+@keyframes glitch {
+  0%   { text-shadow:  2px 0 var(--neon-pink), -2px 0 var(--neon-cyan); transform: translate(0); }
+  10%  { text-shadow: -2px 0 var(--neon-pink),  2px 0 var(--neon-cyan); transform: translate(-1px,  1px); }
+  20%  { text-shadow:  2px 0 var(--neon-pink), -2px 0 var(--neon-cyan); transform: translate( 1px, -1px); }
+  30%  { text-shadow: none; transform: translate(0); }
+  100% { text-shadow: none; transform: translate(0); }
+}
+
+.glitch {
+  animation: glitch 6s infinite;
+  animation-delay: var(--glitch-delay, 0s);
+}
+
+.glitch:hover {
+  animation: glitch 0.25s infinite;
+}
+
+/* Softer variant — smaller offsets, slower cycle, for large display text */
+@keyframes glitch-soft {
+  0%   { text-shadow:  1px 0 var(--neon-pink), -1px 0 var(--neon-cyan); transform: translate(0); }
+  8%   { text-shadow: -1px 0 var(--neon-pink),  1px 0 var(--neon-cyan); transform: translate(-0.5px, 0.5px); }
+  16%  { text-shadow:  1px 0 var(--neon-pink), -1px 0 var(--neon-cyan); transform: translate(0.5px, -0.5px); }
+  24%  { text-shadow: none; transform: translate(0); }
+  100% { text-shadow: none; transform: translate(0); }
+}
+
+.glitch-soft {
+  animation: glitch-soft 9s infinite;
+  animation-delay: var(--glitch-delay, 0s);
+}
+
+.glitch-soft:hover {
+  animation: glitch-soft 0.4s infinite;
+}
+
+/* ── Neon flicker ──────────────────────────────────────────────────────────── */
+/* Simulates a neon tube that occasionally flickers */
+@keyframes flicker {
+  0%, 89%, 91%, 93%, 100% { opacity: 1; }
+  90%  { opacity: 0.7; }
+  92%  { opacity: 0.9; }
+}
+
+.neon-flicker {
+  animation: flicker 5s infinite;
+  animation-delay: var(--flicker-delay, 0s);
+}
+
+/* ── Neon glow helpers ─────────────────────────────────────────────────────── */
+.glow-cyan  { text-shadow: 0 0 8px var(--neon-cyan),  0 0 20px var(--neon-cyan); }
+.glow-pink  { text-shadow: 0 0 8px var(--neon-pink),  0 0 20px var(--neon-pink); }
+.glow-violet{ text-shadow: 0 0 8px var(--neon-violet), 0 0 20px var(--neon-violet); }
+
+/* ── Button styles ─────────────────────────────────────────────────────────── */
+.btn-violet {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background-color: #7c3aed;
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.5);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-violet:hover {
+  background-color: #8b5cf6;
+  box-shadow: 0 0 28px rgba(139, 92, 246, 0.8);
+}
+
+.btn-cyan {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  background-color: transparent;
+  border: 1px solid rgba(0, 255, 240, 0.5);
+  box-shadow: 0 0 12px rgba(0, 255, 240, 0.2);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-cyan:hover {
+  color: white;
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 24px rgba(0, 255, 240, 0.45);
+}
