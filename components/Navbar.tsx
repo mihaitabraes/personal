@@ -1,80 +1,150 @@
 "use client";
+import { useState, useEffect } from "react";
+import { useScrollY } from "@/hooks/useScroll";
 
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+function LiveTime() {
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const fmt = () => {
+      const s = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Europe/Bucharest",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }).format(new Date());
+      setTime(s);
+    };
+    fmt();
+    const id = setInterval(fmt, 30_000);
+    return () => clearInterval(id);
+  }, []);
+  return <span>{time}</span>;
+}
 
 const links = [
-  { href: "/about", label: "About" },
-  { href: "/cv", label: "CV" },
-  { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  { href: "#about",   label: "About" },
+  { href: "#stack",   label: "Stack" },
+  { href: "#work",    label: "Work" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Navbar() {
-  const pathname = usePathname();
+  const y = useScrollY();
+  const shrunk = y > 40;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href="/" className="neon-flicker opacity-90 hover:opacity-100 transition-opacity">
-          <Image
-            src="/logo.png"
-            alt="Mihaita Braes"
-            width={120}
-            height={80}
-            priority
-          />
-        </Link>
+    <header
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        padding: shrunk ? "10px 24px" : "20px 28px",
+        transition: "padding 0.4s cubic-bezier(0.22,1,0.36,1)",
+        mixBlendMode: "difference",
+        color: "#fff",
+      }}
+    >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1fr",
+          alignItems: "center",
+          gap: 24,
+          fontFamily: "var(--font-mono)",
+          fontSize: 12,
+          letterSpacing: "0.04em",
+        }}
+      >
+        {/* Left: logo mark */}
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <a
+            href="#top"
+            style={{ display: "flex", alignItems: "center", gap: 10, color: "inherit", textDecoration: "none" }}
+          >
+            <span
+              style={{
+                display: "inline-block",
+                width: 10,
+                height: 10,
+                background: "var(--accent)",
+                borderRadius: "50%",
+                animation: "ping 2.4s ease-out infinite",
+              }}
+            />
+            <span
+              style={{
+                fontFamily: "var(--font-display)",
+                fontStyle: "var(--display-style)",
+                fontSize: 22,
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Mihaita Braes
+            </span>
+          </a>
+        </div>
 
-        <ul className="flex items-center gap-1">
-          {links.map(({ href, label }) => {
-            const isActive = pathname === href;
-            return (
-              <li key={href}>
-                <Link href={href} className="relative block px-4 py-2 group">
-                  {/* Hover background pill */}
-                  <motion.span
-                    className="absolute inset-0 rounded-sm bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  />
+        {/* Center: links */}
+        <nav style={{ display: "flex", gap: 4 }}>
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="nav-link"
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                padding: "8px 14px",
+                fontFamily: "var(--font-mono)",
+                fontSize: 11,
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+                position: "relative",
+              }}
+            >
+              {l.label}
+            </a>
+          ))}
+        </nav>
 
-                  {/* Active background glow pill */}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-active-bg"
-                      className="absolute inset-0 rounded-sm bg-violet-500/10"
-                      transition={{ type: "spring", stiffness: 380, damping: 34 }}
-                    />
-                  )}
-
-                  {/* Label */}
-                  <span
-                    className={`relative text-sm font-medium font-display tracking-wide transition-all duration-200 ${
-                      isActive
-                        ? "text-white glow-violet"
-                        : "text-zinc-500 group-hover:text-zinc-200"
-                    }`}
-                  >
-                    {label}
-                  </span>
-
-                  {/* Active underline */}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-active-line"
-                      className="absolute bottom-0 left-3 right-3 h-px bg-violet-400"
-                      style={{ boxShadow: "0 0 6px 1px #bf5af2" }}
-                      transition={{ type: "spring", stiffness: 380, damping: 34 }}
-                    />
-                  )}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+        {/* Right: status pill + time */}
+        <div
+          style={{ display: "flex", alignItems: "center", gap: 14, justifySelf: "end", whiteSpace: "nowrap" }}
+        >
+          <a
+            href="mailto:mihaita.braes@gmail.com?subject=Hello%20Mihaita"
+            className="nav-link"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              color: "inherit",
+              textDecoration: "none",
+              padding: "6px 10px 6px 8px",
+              borderRadius: 999,
+              border: "1px solid rgba(255,255,255,0.25)",
+              transition: "border-color 0.3s ease",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <span
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: "50%",
+                background: "#3CCB7F",
+                animation: "pulse 1.8s ease-in-out infinite",
+              }}
+            />
+            Open to chats
+            <span style={{ marginLeft: 2, opacity: 0.7 }}>↗</span>
+          </a>
+          <span style={{ opacity: 0.55 }}>Bucharest</span>
+          <span style={{ opacity: 0.55 }}><LiveTime /></span>
+        </div>
+      </div>
     </header>
   );
 }
