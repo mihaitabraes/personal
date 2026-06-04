@@ -41,9 +41,11 @@ export function Navbar() {
         right: 0,
         zIndex: 50,
         padding: shrunk ? "10px 24px" : "20px 28px",
-        transition: "padding 0.4s cubic-bezier(0.22,1,0.36,1)",
-        mixBlendMode: "difference",
-        color: "#fff",
+        transition: "padding 0.4s cubic-bezier(0.22,1,0.36,1), background 0.4s ease, backdropFilter 0.4s ease",
+        background: shrunk ? "color-mix(in oklab, var(--bg) 78%, transparent)" : "transparent",
+        backdropFilter: shrunk ? "blur(14px) saturate(1.1)" : "none",
+        WebkitBackdropFilter: shrunk ? "blur(14px) saturate(1.1)" : "none",
+        color: "var(--ink)",
       }}
     >
       <div
@@ -70,6 +72,7 @@ export function Navbar() {
                 height: 10,
                 background: "var(--accent)",
                 borderRadius: "50%",
+                boxShadow: "0 0 0 0 var(--accent)",
                 animation: "ping 2.4s ease-out infinite",
               }}
             />
@@ -113,22 +116,7 @@ export function Navbar() {
         <div
           style={{ display: "flex", alignItems: "center", gap: 14, justifySelf: "end", whiteSpace: "nowrap" }}
         >
-          <a
-            href="mailto:mihaita.braes@gmail.com?subject=Hello%20Mihaita"
-            className="nav-link"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              color: "inherit",
-              textDecoration: "none",
-              padding: "6px 10px 6px 8px",
-              borderRadius: 999,
-              border: "1px solid rgba(255,255,255,0.25)",
-              transition: "border-color 0.3s ease",
-              whiteSpace: "nowrap",
-            }}
-          >
+          <span style={{ display: "flex", alignItems: "center", gap: 8, whiteSpace: "nowrap" }}>
             <span
               style={{
                 width: 6,
@@ -139,8 +127,7 @@ export function Navbar() {
               }}
             />
             Open to chats
-            <span style={{ marginLeft: 2, opacity: 0.7 }}>↗</span>
-          </a>
+          </span>
           <span style={{ opacity: 0.55 }}>Bucharest</span>
           <span style={{ opacity: 0.55 }}><LiveTime /></span>
         </div>

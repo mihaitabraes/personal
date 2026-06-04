@@ -17,9 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mihaita Braes — Product Manager",
+  title: "Mihaita Braes — Senior Product Manager · AI, Data & Cloud",
   description:
-    "Technical PM in Bucharest. Six years turning ambiguous system challenges into shipped software. Currently building agentic AI workflows for product teams.",
+    "Senior PM in Bucharest. 6+ years building AI, data, and cloud products across fintech and mobile. LLM integration, agentic workflows, Databricks ecosystem.",
 };
 
 export default function RootLayout({

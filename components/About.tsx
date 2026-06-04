@@ -6,7 +6,7 @@ import SplitWords from "@/components/SplitWords";
 const stats = [
   { n: "06", l: "Years shipping product" },
   { n: "11", l: "Members in the Agile crew I founded" },
-  { n: "10", l: "Generative AI & Cloud certifications" },
+  { n: "12", l: "Generative AI & Cloud certifications" },
   { n: "20%", l: "SLA adherence lift via ownership & escalation" },
 ];
 

@@ -28,11 +28,12 @@ const PILLARS = [
   {
     id: "technical",
     n: "III.",
-    title: "Technical Literacy",
-    blurb: "Telecom engineering background. I read the spec, draw the data flow, and write the trade-off doc.",
+    title: "Data & Cloud",
+    blurb: "Python, Pandas, Databricks, Spark, MLflow — the data stack from raw ingestion to insight. AWS, Azure, and cloud architecture to go with it.",
     skills: [
-      "Distributed Systems", "REST APIs", "iOS & Android (native specifics)",
-      "Real-time Data Flows", "Cloud — AWS, Azure", "Signal Processing Fundamentals", "Mobile Background Processing",
+      "Python · Pandas · NumPy", "Statistical Analysis", "A/B Testing & Experimentation",
+      "ML Fundamentals", "Databricks Ecosystem", "Spark · MLflow",
+      "AWS · Azure", "Real-time Data Flows", "Cloud Architecture",
     ],
   },
   {

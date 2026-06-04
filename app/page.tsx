@@ -7,7 +7,6 @@ import KineticStatement   from "@/components/KineticStatement";
 import About              from "@/components/About";
 import Stack              from "@/components/Stack";
 import Projects           from "@/components/Projects";
-import ProjectDetails     from "@/components/ProjectDetails";
 import Now                from "@/components/Now";
 import Quote              from "@/components/Quote";
 import Contact            from "@/components/Contact";
@@ -23,7 +22,6 @@ export default function Home() {
         <About />
         <Stack />
         <Projects />
-        <ProjectDetails />
         <Now />
         <Quote />
         <Contact />

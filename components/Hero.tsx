@@ -76,8 +76,8 @@ export default function Hero() {
         </div>
         <div style={{ textAlign: "center" }}>⟶ Index of work, principles &amp; practice</div>
         <div style={{ justifySelf: "end", textAlign: "right" }}>
-          <div>Product Manager · AI &amp; Agentic Systems</div>
-          <div style={{ marginTop: 4 }}>06 YRS · FINTECH · MEDIA · TRANSPORTATION</div>
+          <div>Senior Product Manager · AI, Data &amp; Cloud</div>
+          <div style={{ marginTop: 4 }}>06+ YRS · FINTECH · MOBILE · AI</div>
         </div>
       </div>
 
@@ -295,7 +295,7 @@ export default function Hero() {
             inView={bodyInView}
             stagger={0.025}
             delay={0.4}
-            text="Technical PM in Bucharest. Six years turning ambiguous system challenges into shipped software — real-time data, mobile, distributed APIs. Currently building agentic AI workflows for product teams."
+            text="Senior PM in Bucharest. Six-plus years building AI, data, and cloud products across fintech and mobile — where product strategy meets analytical rigour. Currently deep in agentic workflows, LLM integration, and the Databricks ecosystem."
           />
         </p>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 22 }}>
