@@ -41,12 +41,12 @@ export default function Contact() {
         >
           <span style={{ display: "block", overflow: "hidden", paddingBlock: "0.14em", marginBlock: "-0.14em" }}>
             <span style={{ display: "inline-block", transform: inView ? "translateY(0)" : "translateY(110%)", transition: "transform 1.1s cubic-bezier(0.22,1,0.36,1) 0.1s" }}>
-              Got a brief?
+              Let's talk
             </span>
           </span>
           <span style={{ display: "block", overflow: "hidden", paddingBlock: "0.18em", marginBlock: "-0.18em" }}>
             <span style={{ display: "inline-block", transform: inView ? "translateY(0)" : "translateY(110%)", transition: "transform 1.1s cubic-bezier(0.22,1,0.36,1) 0.3s", color: "var(--accent)" }}>
-              A weird idea?
+              about something
             </span>
           </span>
           <span style={{ display: "block", overflow: "hidden", paddingBlock: "0.14em", marginBlock: "-0.14em" }}>
@@ -61,7 +61,7 @@ export default function Contact() {
                 fontSize: "0.62em",
               }}
             >
-              Or just want to say hi?
+              worth building.
             </span>
           </span>
         </h2>
@@ -89,7 +89,7 @@ export default function Contact() {
             mihaita.braes@gmail.com <span>↗</span>
           </a>
           {[
-            { label: "LinkedIn ↗", href: "https://linkedin.com/in/mihaita-braes" },
+            { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/mihaita-braes/" },
             { label: "GitHub ↗", href: "https://github.com/mihaitabraes" },
             { label: "CV.pdf ↗", href: "/Mihaita Braes - CV.pdf" },
           ].map(({ label, href }) => (
@@ -116,26 +116,6 @@ export default function Contact() {
         </div>
       </div>
 
-      <footer
-        style={{
-          marginTop: 80,
-          paddingTop: 24,
-          borderTop: "1px solid rgba(255,255,255,0.18)",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr",
-          gap: 20,
-          fontFamily: "var(--font-mono)",
-          fontSize: 11,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          color: "var(--bg)",
-          opacity: 0.55,
-        }}
-      >
-        <div>© 2026 Mihaita Braes</div>
-        <div style={{ textAlign: "center" }}>Bucharest / Romania</div>
-        <div style={{ textAlign: "right" }}>Built with care · v2.0</div>
-      </footer>
     </section>
   );
 }

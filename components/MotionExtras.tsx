@@ -80,12 +80,12 @@ function CustomCursor() {
 
 /* ── Side Section Index ────────────────────────────────────────────── */
 const SECTIONS = [
-  { id: "top",     n: "00", label: "Intro" },
-  { id: "about",   n: "01", label: "About" },
-  { id: "stack",   n: "02", label: "Stack" },
-  { id: "work",    n: "03", label: "Work" },
-  { id: "cases",   n: "04", label: "Cases" },
-  { id: "contact", n: "05", label: "Contact" },
+  { id: "top",        n: "00", label: "Intro" },
+  { id: "about",      n: "01", label: "About" },
+  { id: "stack",      n: "02", label: "Stack" },
+  { id: "work",       n: "03", label: "Work" },
+  { id: "principles", n: "04", label: "Principles" },
+  { id: "contact",    n: "05", label: "Contact" },
 ];
 
 function SideIndex() {

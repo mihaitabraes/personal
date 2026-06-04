@@ -4,46 +4,46 @@ import { useInView } from "@/hooks/useInView";
 
 export const PROJECTS = [
   {
-    n: "01", title: "Lab.club",
-    role: "Product Manager · Thinslices", tag: "Mobile · Real-time", year: "2025—",
+    n: "01", title: "Event Platform",
+    role: "Product Manager · Thinslices", tag: "Mobile · Real-time", year: "2026—",
     metrics: ["iOS + Android", "Real-time social", "Spotify ingestion"],
-    blurb: "Event discovery for the electronic music scene. Designed the follow / privacy / notification system end-to-end.",
+    blurb: "Real-time event discovery platform for iOS and Android. Designed the social graph, follow / privacy / notification system, and Spotify ingestion flow end-to-end.",
     color: "#D26A3D",
   },
   {
-    n: "02", title: "PM Agent",
-    role: "Builder · Internal", tag: "Agentic AI · Claude + MCP", year: "2025",
-    metrics: ["Jira", "Figma", "Drive · Slack"],
-    blurb: "Agentic workflow wired into PM tooling via Model Context Protocol. Automated sprint reporting, backlog generation from designs.",
-    color: "#7B6BB5",
-  },
-  {
-    n: "03", title: "Dementia Finance",
-    role: "Delivery Manager · Levi9", tag: "Fintech · Care", year: "2024",
-    metrics: ["3-option doc", "Stakeholder unblock", "Architectural trade-off"],
-    blurb: "Authored a three-option architectural trade-off doc that drove the stakeholder decision and unblocked delivery.",
-    color: "#C46C8B",
-  },
-  {
-    n: "04", title: "Charity Platform",
-    role: "Delivery Manager · Levi9", tag: "Fintech · Acquired · NDA", year: "2023",
-    metrics: ["Mid-sprint pivot", "Acquisition", "Scope discipline"],
-    blurb: "Navigated a mid-sprint scope change driven by acquisition requirements. Platform was successfully acquired post-launch.",
+    n: "02", title: "Charity Platform",
+    role: "Delivery Manager · Levi9", tag: "Fintech · Civic tech", year: "2024",
+    metrics: ["Mid-sprint pivot", "Post-launch growth", "Scope discipline"],
+    blurb: "Fintech platform for charitable giving. Navigated a mid-sprint scope change, kept the team on track, and shipped a product that found real traction post-launch.",
     color: "#6B8E63",
   },
   {
-    n: "05", title: "IașiPark",
-    role: "Founder · Side project", tag: "Civic · AI · WIP", year: "2026",
-    metrics: ["Parking Karma", "AI prediction", "B2B route"],
-    blurb: "Crowdsourced parking app for my city. 'Parking Karma' gamification, AI prediction model, B2B route.",
-    color: "#B89E4A",
+    n: "03", title: "Port Management",
+    role: "Delivery Manager · Levi9", tag: "Enterprise · Operations", year: "2025",
+    metrics: ["Multi-team delivery", "API integration", "Real-time ops"],
+    blurb: "End-to-end port operations management system — vessel tracking, logistics coordination, and real-time operational data across a multi-team delivery.",
+    color: "#4A7B8E",
+  },
+  {
+    n: "04", title: "Tachograph System",
+    role: "Delivery Manager · Levi9", tag: "Transportation · Compliance", year: "2022",
+    metrics: ["Fleet compliance", "Driver data", "Regulatory reporting"],
+    blurb: "Tachograph data management system for a transportation company — driver hours, fleet compliance tracking, and automated regulatory reporting.",
+    color: "#8E7B4A",
+  },
+  {
+    n: "05", title: "Late Chapter",
+    role: "Founder · Side project", tag: "Books · Community · WIP", year: "2026—",
+    metrics: ["Book club", "Community reads", "Side build"],
+    blurb: "A book club platform built on the side. Currently reading: Wheel of Time by Robert Jordan.",
+    color: "#7B6BB5",
   },
   {
     n: "06", title: "Agile Initiative",
-    role: "Founder · Internal", tag: "Public talk · Levi9", year: "2022—24",
+    role: "Founder · Internal", tag: "Public talk · Levi9", year: "2023",
     metrics: ["11 members", "Public talk", "Tech Stories 2024"],
     blurb: "Founded an internal Agile training crew. Culminated in a public talk at Levi9 Tech Stories.",
-    color: "#D26A3D",
+    color: "#B89E4A",
   },
 ];
 
@@ -57,8 +57,7 @@ function ProjectRow({
   onLeave: () => void;
 }) {
   return (
-    <a
-      href={`#case-${p.n}`}
+    <div
       onMouseEnter={() => onHover(index)}
       onMouseLeave={onLeave}
       className="project-row"
@@ -70,7 +69,6 @@ function ProjectRow({
         gap: "calc(28px * var(--gap-scale))",
         padding: "calc(28px * var(--pad-scale)) calc(8px * var(--pad-scale))",
         borderTop: "1px solid var(--ink)",
-        textDecoration: "none",
         color: "var(--ink)",
         zIndex: 1,
         transition: "padding 0.5s cubic-bezier(0.22,1,0.36,1)",
@@ -145,7 +143,7 @@ function ProjectRow({
           }}
         >↗</span>
       </span>
-    </a>
+    </div>
   );
 }
 
@@ -187,7 +185,7 @@ export default function Projects() {
           </h2>
         </div>
         <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-soft)", textAlign: "right", paddingBottom: 18, lineHeight: 1.7 }}>
-          06 entries · 2022 → present<br />Click any row for the case study
+          06 entries · 2022 → present
         </div>
       </div>
 

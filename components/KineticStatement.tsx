@@ -4,10 +4,10 @@ import { useKineticProgress } from "@/hooks/useScroll";
 
 const tokens = [
   "I", "turn", "ambiguous",
-  "system", "problems",
-  "—", "real-time", "data,",
+  "system", "problems:",
+  "real-time", "data,",
   "agentic", "AI,",
-  "distributed", "APIs", "—",
+  "distributed", "APIs",
   "into", "shipped", "software.",
 ];
 

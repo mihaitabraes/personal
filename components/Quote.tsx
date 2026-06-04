@@ -7,6 +7,7 @@ export default function Quote() {
 
   return (
     <section
+      id="principles"
       ref={ref as React.RefObject<HTMLElement>}
       style={{
         background: "var(--bg-alt)",
@@ -23,22 +24,27 @@ export default function Quote() {
           fontFamily: "var(--font-display)",
           fontStyle: "var(--display-style)",
           fontWeight: "var(--display-weight, 400)" as React.CSSProperties["fontWeight"],
-          fontSize: "clamp(48px, 6.5vw, 110px)",
-          lineHeight: 0.98,
+          fontSize: "clamp(36px, 5vw, 90px)",
+          lineHeight: 1.0,
           letterSpacing: "-0.025em",
           margin: 0,
           maxWidth: 1400,
           marginInline: "auto",
         }}
       >
-        <SplitWords inView={inView} stagger={0.04} text='"Distinguish strategic pivots' />
+        <SplitWords inView={inView} stagger={0.04} text='"The most dangerous gap' />
+        <br />
+        <SplitWords inView={inView} delay={0.4} stagger={0.04} text="in product work isn't" />
         <br />
         <span style={{ color: "var(--accent)" }}>
-          <SplitWords inView={inView} delay={0.5} stagger={0.04} text="from scope creep." />
+          <SplitWords inView={inView} delay={0.8} stagger={0.04} text="between design and engineering." />
         </span>
-        <SplitWords inView={inView} delay={1.0} stagger={0.04} text=' Ship the trade-off' />
         <br />
-        <SplitWords inView={inView} delay={1.5} stagger={0.04} text='document, not just the feature."' />
+        <SplitWords inView={inView} delay={1.2} stagger={0.04} text="It's between the decision" />
+        <br />
+        <SplitWords inView={inView} delay={1.6} stagger={0.04} text='and the data that should' />
+        <br />
+        <SplitWords inView={inView} delay={2.0} stagger={0.04} text='have informed it."' />
       </blockquote>
       <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--ink-soft)", marginTop: 50 }}>
         ⟶ A working principle

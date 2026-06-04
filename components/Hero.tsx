@@ -77,7 +77,6 @@ export default function Hero() {
         <div style={{ textAlign: "center" }}>⟶ Index of work, principles &amp; practice</div>
         <div style={{ justifySelf: "end", textAlign: "right" }}>
           <div>Senior Product Manager · AI, Data &amp; Cloud</div>
-          <div style={{ marginTop: 4 }}>06+ YRS · FINTECH · MOBILE · AI</div>
         </div>
       </div>
 
@@ -118,7 +117,7 @@ export default function Hero() {
                 fontWeight: 500,
               }}
             >
-              Ships
+              Turns out
             </span>
           </span>
           <span style={{ display: "block", overflow: "hidden", paddingBlock: "0.18em", marginBlock: "-0.18em" }}>
@@ -132,7 +131,7 @@ export default function Hero() {
                 fontSize: "clamp(72px, 13vw, 210px)",
               }}
             >
-              software
+              the data
             </span>
           </span>
           <span style={{ display: "block", overflow: "hidden", paddingBlock: "0.15em", marginBlock: "-0.15em" }}>
@@ -148,7 +147,7 @@ export default function Hero() {
                 fontSize: "clamp(52px, 9vw, 150px)",
               }}
             >
-              with the engineers.
+              is the interesting part.
             </span>
           </span>
         </h1>

@@ -3,12 +3,12 @@ import { useInView } from "@/hooks/useInView";
 import SplitWords from "@/components/SplitWords";
 
 const items = [
-  { k: "Role",     v: "PM at Thinslices",        tag: "Aug 2025 — Bucharest" },
-  { k: "Building", v: "Lab.club",                 tag: "iOS · Android · Real-time" },
-  { k: "Learning", v: "Next.js + Agentic AI",     tag: "Scrimba + Claude Code" },
-  { k: "Stack",    v: "Claude · MCP · Jira",      tag: "PM-side agentic workflows" },
-  { k: "Side",     v: "IașiPark",                 tag: "Civic · AI-assisted build" },
-  { k: "Reading",  v: "INSPIRED — Marty Cagan",   tag: "again" },
+  { k: "Role",     v: "PM at Thinslices",       tag: "Aug 2025 — Bucharest" },
+  { k: "Building", v: "Event platform",          tag: "iOS · Android · Real-time" },
+  { k: "Learning", v: "Data Science",            tag: "Python · Pandas · NumPy" },
+  { k: "Stack",    v: "Python · Databricks",     tag: "Data science workflows" },
+  { k: "Side",     v: "Late Chapter",            tag: "Book club · Side project" },
+  { k: "Reading",  v: "Wheel of Time",           tag: "Robert Jordan" },
 ];
 
 export default function Now() {

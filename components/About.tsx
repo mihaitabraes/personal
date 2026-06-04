@@ -7,7 +7,7 @@ const stats = [
   { n: "06", l: "Years shipping product" },
   { n: "11", l: "Members in the Agile crew I founded" },
   { n: "12", l: "Generative AI & Cloud certifications" },
-  { n: "20%", l: "SLA adherence lift via ownership & escalation" },
+  { n: "00", l: "Features shipped without a data rationale" },
 ];
 
 function StatCell({ s, i, inView }: { s: { n: string; l: string }; i: number; inView: boolean }) {
@@ -134,34 +134,6 @@ export default function About() {
 
         {/* Right column */}
         <div style={{ fontFamily: "var(--font-sans)" }}>
-          <p
-            style={{
-              fontSize: "calc(22px * var(--type-scale))",
-              lineHeight: 1.45,
-              maxWidth: 580,
-              margin: 0,
-              opacity: 0.92,
-            }}
-          >
-            <SplitWords
-              inView={inView}
-              stagger={0.02}
-              delay={0.2}
-              text="Six years in product, mostly fintech, mobility, and mobile. I came up through a Telecommunications Engineering degree, which means real-time data flows, distributed systems, and signal processing don't scare me — they shape how I scope and decompose problems."
-            />
-          </p>
-          <p
-            style={{
-              fontSize: "calc(18px * var(--type-scale))",
-              lineHeight: 1.55,
-              maxWidth: 560,
-              marginTop: 28,
-              opacity: 0.62,
-            }}
-          >
-            Lately: agentic AI workflows with Claude Code &amp; MCP, the messy middle between LLMs and PM tooling, and full-stack Next.js as a way to stay close to the build.
-          </p>
-
           {/* Stats grid */}
           <div
             style={{

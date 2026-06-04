@@ -49,8 +49,8 @@ const PILLARS = [
 ];
 
 const TOOLS = [
-  "Claude Code", "Gemini", "Jira", "Figma", "Confluence",
-  "Miro", "Notion", "Slack", "Google Workspace", "Azure DevOps",
+  "Python", "Pandas · NumPy", "Databricks", "Spark · MLflow",
+  "AWS · Azure", "Claude Code", "Jira", "Figma", "Confluence", "Notion",
 ];
 
 function StackPillar({
@@ -249,28 +249,17 @@ export default function Stack() {
         </div>
         <div
           style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "calc(18px * var(--type-scale))",
-            lineHeight: 1.5,
-            opacity: 0.75,
-            maxWidth: 420,
+            fontFamily: "var(--font-mono)",
+            fontSize: 11,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "var(--ink-soft)",
             justifySelf: "end",
+            alignSelf: "end",
+            paddingBottom: 18,
           }}
         >
-          A T-shaped PM. Deep enough on AI, mobile, and distributed systems to scope and decompose them. Wide enough to ship.
-          <span
-            style={{
-              display: "block",
-              marginTop: 18,
-              fontFamily: "var(--font-mono)",
-              fontSize: 11,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              color: "var(--ink-soft)",
-            }}
-          >
-            ⟶ Tap a pillar to expand
-          </span>
+          ⟶ Tap a pillar to expand
         </div>
       </div>
 
