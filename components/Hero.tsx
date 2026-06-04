@@ -294,7 +294,7 @@ export default function Hero() {
             inView={bodyInView}
             stagger={0.025}
             delay={0.4}
-            text="Senior PM in Bucharest. Six-plus years building AI, data, and cloud products across fintech and mobile — where product strategy meets analytical rigour. Currently deep in agentic workflows, LLM integration, and the Databricks ecosystem."
+            text="Senior PM in Bucharest. Six-plus years shipping product. Now going deeper into Data Science, AI, and cloud."
           />
         </p>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 22 }}>
